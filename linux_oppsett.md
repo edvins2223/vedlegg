@@ -1,4 +1,10 @@
-# Vi har bruker med navn jb og root med navn jb
+# Oppsett av Linux
+Vi kjører Debian 11.6.0 64-bit
+
+| Bruker | Privilegie |
+| ----------- | ----------- |
+| root | super-user |
+| jb | super-user |
 
 
 ## For å gi brukeren på Linux sudo rettigheter:
