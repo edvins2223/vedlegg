@@ -3,17 +3,17 @@
 
 ## For å gi brukeren på Linux sudo rettigheter:
 `
-$ su #kjør som root
-# sudo usermod -aG sudo jb
-# exit
+  $ su #kjør som root
+  # sudo usermod -aG sudo jb
+  # exit
 `
 
 Fra nå av: dersom du skriver 
 `
-$ su jb
+  $ su jb
 `
 vil du få sudo rettigheter med brukeren jb
 
 `
-sudo visudo /etc/sudoers
+  sudo visudo /etc/sudoers
 `
