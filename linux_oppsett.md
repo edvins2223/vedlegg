@@ -37,5 +37,5 @@ vil du få sudo rettigheter med brukeren jb
 
 ## Mulig se på:
 ```
-  sudo visudo /etc/sudoers
+  sudo visudo
 ```
