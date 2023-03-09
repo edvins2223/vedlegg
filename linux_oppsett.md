@@ -14,8 +14,17 @@ I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en komman
 ## For å gi brukeren på Linux sudo rettigheter:
 ```
   $ su #kjør som root
-  # sudo usermod -aG sudo jb
+  # sudo visudo
+```
+Legg til linjen:
+```
+jb  ALL=(ALL:ALL) ALL
+```
+under root i "# User privilege specification" og lagrer filen.
+Deretter tester man om brukeren har fått sudo rettigheter:
+```
   # exit
+  $ sudo ls -la /root #tester om brukeren jb har sudo privilegier
 ```
 
 ### Fra nå av: 
@@ -23,8 +32,10 @@ dersom du skriver
 ```
   $ su jb
 ```
+
 vil du få sudo rettigheter med brukeren jb
 
+## Mulig se på:
 ```
   sudo visudo /etc/sudoers
 ```
