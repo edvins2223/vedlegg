@@ -16,26 +16,13 @@ I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en komman
   $ su #kjør som root
   # sudo visudo
 ```
-Legg til linjen:
+Under root i "# User privilege specification" legg til linjen:
 ```
 jb  ALL=(ALL:ALL) ALL
 ```
-under root i "# User privilege specification" og lagrer filen.
+og lagre filen.
 Deretter tester man om brukeren har fått sudo rettigheter:
 ```
   # exit
-  $ sudo ls -la /root #tester om brukeren jb har sudo privilegier
-```
-
-### Fra nå av: 
-dersom du skriver 
-```
-  $ su jb
-```
-
-vil du få sudo rettigheter med brukeren jb
-
-## Mulig se på:
-```
-  sudo visudo
+  $ sudo ls -la /root #brukeren jb har sudo privilegier dersom kommandoen viser listen
 ```
