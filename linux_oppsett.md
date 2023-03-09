@@ -1,5 +1,5 @@
 # Oppsett av Linux
-Vi kjører Debian 11.6.0 64-bit
+Vi kjører Debian 11.6.0 64-bit med standardinstillinger
 
 | Bruker | Privilegie |
 | ----------- | ----------- |
@@ -14,7 +14,8 @@ Vi kjører Debian 11.6.0 64-bit
   # exit
 ```
 
-Fra nå av: dersom du skriver 
+### Fra nå av: 
+dersom du skriver 
 ```
   $ su jb
 ```
