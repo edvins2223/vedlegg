@@ -11,16 +11,16 @@
 <br>
 <br>
 
-# Generelt
+# 1 Generelt
 
 Alle maskiner kjører på VmWare
 
-# Linux
+# 2 Linux
 
-## Leserveiledning:
+## 2.1 Leserveiledning:
 I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en kommando slik den skal skrives inn i CMD-konsollet. Disse symbolene skal altså ikke skrives inn. "$"-symbolet representerer kommandoer skrevet av jb brukeren, mens "#"-symbolet representerer kommandoer skrevet av root.
 
-## Generelt
+## 2.2 Generelt
 Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger 
 
 
@@ -32,7 +32,7 @@ Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger
 | jb | super-user |
 
 
-## For å gi brukeren på Linux sudo rettigheter:
+## 2.3 For å gi brukeren på Linux sudo rettigheter:
 ```shell
   $ su
   # sudo visudo
@@ -48,7 +48,7 @@ Deretter tester man om brukeren har fått sudo rettigheter:
   $ sudo ls -la /root
 ```
 
-## Oppsett av Docker på Linux:
+## 2.4 Oppsett av Docker på Linux:
 For installasjon av Docker ble installasjonsguiden https://docs.docker.com/engine/install/debian/#prerequisites til Docker Inc fulgt. 
 
 Vi installerte Docker med et repo. Med de neste kommandoene oppdateres og installeres det pakker som gjør det mulig å tillate repo over HTTPS.
