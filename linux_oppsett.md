@@ -5,6 +5,7 @@
 2. [Linux](#2-linux)  
 2.1. [For å gi brukeren på Linux sudo rettigheter:](#21-for-å-gi-brukeren-på-linux-sudo-rettigheter)  
 2.2. [Oppsett av Docker på Linux:](#22-oppsett-av-docker-på-linux)  
+3. [Windows](#3-windows)
 
 <br>
 <br>
@@ -91,6 +92,7 @@ Nå er Docker installert på maskinen.
 <br>
 
 # Windows
+Vi kjører Windows Enterprise 10 OS-build 1........ 64-bit med standardinstillinger 
 
 
 | Bruker | Privilegie |
@@ -102,4 +104,9 @@ Nå er Docker installert på maskinen.
 ## 3.1 Oppsett av Docker på Windows:
 For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_](https://docs.docker.com/desktop/install/windows-install/) til Docker Inc fulgt. 
 
-Vi installerte Docker med ...
+Vi installerte Docker fra kommandolinje i Powershell.
+Først må man laste ned "Docker Desktop Installer.exe" fra [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_]. 
+Deretter bruker man Powershell og skriver:
+```shell
+Start-Process 'Docker Desktop Installer.exe' -Wait install
+```
