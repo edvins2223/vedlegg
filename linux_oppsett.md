@@ -3,8 +3,8 @@
 **Innhold:**
 1. [Generelt](#1-generelt)
 2. [Linux](#2-linux)
-2.1. [For å gi brukeren på Linux sudo rettigheter:](#21-for-å-gi-brukeren-på-linux-sudo-rettigheter:)  
-2.2. [Oppsett av Docker på Linux:](#22-oppsett-av-docker-på-linux:)  
+2.1. [For å gi brukeren på Linux sudo rettigheter:](#21-for-å-gi-brukeren-på-linux-sudo-rettigheter)  
+2.2. [Oppsett av Docker på Linux:](#22-oppsett-av-docker-på-linux)  
 
 <br>
 <br>
