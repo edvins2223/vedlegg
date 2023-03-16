@@ -12,6 +12,7 @@
 # 1 Generelt
 
 Alle maskiner kjører på VmWare
+<br>
 
 # 2 Linux
 
@@ -27,7 +28,7 @@ Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger
 | root | super-user |
 | jb | super-user |
 
-
+<br>
 ## 2.1 For å gi brukeren på Linux sudo rettigheter:
 ```shell
   $ su
@@ -43,6 +44,8 @@ Deretter tester man om brukeren har fått sudo rettigheter:
   # exit
   $ sudo ls -la /root
 ```
+Dersom siste linje printer ut en liste har brukeren sudo rettigheter.
+<br>
 
 ## 2.2 Oppsett av Docker på Linux:
 For installasjon av Docker ble installasjonsguiden https://docs.docker.com/engine/install/debian/#prerequisites til Docker Inc fulgt. 
