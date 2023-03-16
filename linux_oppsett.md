@@ -1,7 +1,26 @@
+# Vedlegg A - systemkonfigurasjon
+
+**Innhold:**
+1. [Generelt](#1-generelt)
+2. [Linux](#2-linux)
+2.1. [Leserveiledning](#21-leserveiledning)
+2.2. [Generelt](#22-generelt)
+2.3. [For å gi brukeren på Linux sudo rettigheter:](#23-for-å-gi-brukeren-på-linux-sudo-rettigheter:)  
+2.4. [Oppsett av Docker på Linux:](#31-oppsett-av-docker-på-linux:)  
+
+<br>
+<br>
+
+# Generelt
+
 Alle maskiner kjører på VmWare
 
-# Oppsett av Linux
+# Linux
 
+## Leserveiledning:
+I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en kommando slik den skal skrives inn i CMD-konsollet. Disse symbolene skal altså ikke skrives inn. "$"-symbolet representerer kommandoer skrevet av jb brukeren, mens "#"-symbolet representerer kommandoer skrevet av root.
+
+## Generelt
 Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger 
 
 
@@ -11,9 +30,6 @@ Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger
 | ----------- | ----------- |
 | root | super-user |
 | jb | super-user |
-
-## Leserveiledning:
-I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en kommando slik den skal skrives inn i CMD-konsollet. Disse symbolene skal altså ikke skrives inn. "$"-symbolet representerer kommandoer skrevet av jb brukeren, mens "#"-symbolet representerer kommandoer skrevet av root.
 
 
 ## For å gi brukeren på Linux sudo rettigheter:
@@ -27,12 +43,12 @@ jb  ALL=(ALL:ALL) ALL
 ```
 og lagre filen.
 Deretter tester man om brukeren har fått sudo rettigheter:
-```
+```shell
   # exit
   $ sudo ls -la /root
 ```
 
-## Oppsett av Docker på Linux
+## Oppsett av Docker på Linux:
 For installasjon av Docker ble installasjonsguiden https://docs.docker.com/engine/install/debian/#prerequisites til Docker Inc fulgt. 
 
 Vi installerte Docker med et repo. Med de neste kommandoene oppdateres og installeres det pakker som gjør det mulig å tillate repo over HTTPS.
