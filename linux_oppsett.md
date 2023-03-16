@@ -50,7 +50,7 @@ Dersom siste linje printer ut en liste har brukeren sudo rettigheter.
 <br>
 
 ## 2.2 Oppsett av Docker på Linux:
-For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/engine/install/debian/)_] (https://docs.docker.com/engine/install/debian/) til Docker Inc fulgt. 
+For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/engine/install/debian/)_](https://docs.docker.com/engine/install/debian/) til Docker Inc fulgt. 
 
 Vi installerte Docker med et repo. Med de neste kommandoene oppdateres og installeres det pakker som gjør det mulig å tillate repo over HTTPS.
 ```shell
