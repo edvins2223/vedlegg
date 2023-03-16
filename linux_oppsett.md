@@ -18,8 +18,8 @@ I den påfølgende tekst vil vi bruke "$"- og "#"-symbolet for å vise en komman
 
 ## For å gi brukeren på Linux sudo rettigheter:
 ```shell
-  $ su #kjør som root
-  $ sudo visudo
+  $ su
+  # sudo visudo
 ```
 Under root i "# User privilege specification" legg til linjen:
 ```
@@ -29,7 +29,7 @@ og lagre filen.
 Deretter tester man om brukeren har fått sudo rettigheter:
 ```
   # exit
-  $ sudo ls -la /root #brukeren jb har sudo privilegier dersom kommandoen viser listen
+  $ sudo ls -la /root
 ```
 
 ## Oppsett av Docker på Linux
