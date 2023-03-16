@@ -90,3 +90,16 @@ Nå er Docker installert på maskinen.
 
 <br>
 
+# Windows
+
+
+| Bruker | Privilegie |
+| ----------- | ----------- |
+| FIH | administrator |
+| fihuser | bruker |
+
+<br>
+## 3.1 Oppsett av Docker på Windows:
+For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_](https://docs.docker.com/desktop/install/windows-install/) til Docker Inc fulgt. 
+
+Vi installerte Docker med ...
