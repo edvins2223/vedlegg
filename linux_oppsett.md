@@ -1,6 +1,11 @@
+Alle maskiner kjører på VmWare
+
 # Oppsett av Linux
 
-Vi kjører Debian 11.6.0 64-bit med standardinstillinger
+Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger 
+
+
+
 
 | Bruker | Privilegie |
 | ----------- | ----------- |
@@ -26,3 +31,7 @@ Deretter tester man om brukeren har fått sudo rettigheter:
   # exit
   $ sudo ls -la /root #brukeren jb har sudo privilegier dersom kommandoen viser listen
 ```
+
+## Oppsett av Docker på Linux
+For installasjon av Docker ble installasjonsguiden https://docs.docker.com/engine/install/debian/#prerequisites til Docker Inc fulgt. 
+
