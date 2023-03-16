@@ -29,6 +29,7 @@ Vi kjører Debian GNU/Linux 11.6.0 x86_64 med standardinstillinger
 | jb | super-user |
 
 <br>
+
 ## 2.1 For å gi brukeren på Linux sudo rettigheter:
 ```shell
   $ su
@@ -39,6 +40,7 @@ Under root i "# User privilege specification" legg til linjen:
 jb  ALL=(ALL:ALL) ALL
 ```
 og lagre filen.
+<br>
 Deretter tester man om brukeren har fått sudo rettigheter:
 ```shell
   # exit
