@@ -101,8 +101,11 @@ Vi kjører Windows Enterprise 10 OS-build 1........ 64-bit med standardinstillin
 | fihuser | bruker |
 
 <br>
+
 ## 3.1 Oppsett av Docker på Windows:
 For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_](https://docs.docker.com/desktop/install/windows-install/) til Docker Inc fulgt. 
+
+Skrudde på WSL ved å kjøre kommandoen ```wsl --install``` i Powershell.
 
 Vi installerte Docker fra kommandolinje i Powershell.
 Først må man laste ned "Docker Desktop Installer.exe" fra [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_]. 
