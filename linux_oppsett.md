@@ -51,6 +51,47 @@ Dersom siste linje printer ut en liste har brukeren sudo rettigheter.
 <br>
 
 ## 2.2 Oppsett av Docker på Linux:
+Installer Docker gjennom et script fra get.docker.com gjennom å skrive 
+```shell
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh ./get-docker.sh 
+```
+Nå er Docker version 23.0.1, build a5ee5b1 installert.
+
+Laster ned konteineren Portainer som er en administrasjonsverktøy med GUI.
+
+Åpner portainer i nettleseren på https://localhost:9443
+
+Velger brukernavn (jb) og passord (jb1234567890)
+
+Hopper over installasjonsveiviseren.
+
+Setter opp en GitLab regestry i Porteiner:
+I App Templates søker vi opp GitLab CE. Fyller ut "Name" til "gitlab" og resten er standard. 
+
+Starter gitlab konteineren i Portainer. 
+
+Åpner konsollet til konteineren gjennom Portainer (tilsvarende ```sudo docker exec -it gitlab```) og kjører kommando ```grep 'Password:' /etc/gitlab/initial_root_password ```. Kopierer passordet. 
+
+Åpner gitlab konteineren i web-konsoll med root som brukernavn og passordet som ble kopiert og endrer passsord til jb1234567890. 
+
+Lager Access Token på Settings. Kaller den "portainer". 
+Tillater alle read funksjonaliteter. Kopierer token som er lagd.
+Limer inn token i gitlab registry. 
+
+
+
+
+
+
+Installerer Watchtower i GitLab registry:
+containrrr/watchtower fra docker.io
+med volume /var/run/docker.sock både på ontainer og host med bind og witable. Dette deler Docker prosessen mellom Watchtower og klienten og gjør derfor at Watchtower får tillatelse til å administrere Docker. Dette er for eks. hente nye images og oppdatering av conteinere automatisk.
+
+
+
+nginx
+
 For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/engine/install/debian/)_](https://docs.docker.com/engine/install/debian/) til Docker Inc fulgt. 
 
 Vi installerte Docker med et repo. Med de neste kommandoene oppdateres og installeres det pakker som gjør det mulig å tillate repo over HTTPS.
@@ -94,6 +135,13 @@ Nå er Docker installert på maskinen.
 # Windows
 Vi kjører Windows Enterprise 10 OS-build 1........ 64-bit med standardinstillinger 
 
+RAM: 8 GB
+Hard Disk: 128 GB
+CPU: 4
+Cores per Socket: 2
+Skrur på "Exposure hardware assisted viritualization to the guest OS" i vSphere Client for Windows maskinen.
+
+
 
 | Bruker | Privilegie |
 | ----------- | ----------- |
@@ -105,11 +153,12 @@ Vi kjører Windows Enterprise 10 OS-build 1........ 64-bit med standardinstillin
 ## 3.1 Oppsett av Docker på Windows:
 For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_](https://docs.docker.com/desktop/install/windows-install/) til Docker Inc fulgt. 
 
-Skrudde på WSL ved å kjøre kommandoen ```wsl --install``` i Powershell.
+Skrur på WSL ved å kjøre kommandoen ```wsl --install``` i Powershell.
 
-Vi installerte Docker fra kommandolinje i Powershell.
-Først må man laste ned "Docker Desktop Installer.exe" fra [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_]. 
-Deretter bruker man Powershell og skriver:
-```shell
-Start-Process 'Docker Desktop Installer.exe' -Wait install
-```
+Åpner REGEDIT og endrer HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LxssManager\Start til 2 og starter maskinen på nytt. 
+
+Åpner Powershell som administrator og kjører ```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
+
+
+Vi installerte Docker Desktop ved å laste ned og kjøre "Docker Desktop Installer.exe" fra [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_]. 
