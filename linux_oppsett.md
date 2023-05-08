@@ -75,101 +75,10 @@ docker --version
 
 <br>
 
-### Portainer
-Portainer er en konteiner med GUI administrasjonsverktøy. Porteiner er ikke nødvendig å bruke for å kjøre testene, men mye av labboppsettet er satt opp gjennom Portainer, så resten av denne guiden går ut i fra at Portainer er satt opp.
-
-Følger [installasjonsguide (_https://docs.portainer.io/start/install-ce/server/docker/linux_)](https://docs.portainer.io/start/install-ce/server/docker/linux) for å laste ned konteineren Portainer: 
-
-1. Åpner en terminal i verten og kjører kommandoene: 
-'''shell
-sudo su
-docker volume create portainer_data
-docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-'''
-
-2. Åpner portainer i nettleseren på https://localhost:9443
-
-3. Velger brukernavn (jb) og passord (jb1234567890)
-
-4. Hopper over installasjonsveiviseren.
-
-Nå kan konteinere lett legges til og aksesseres gjennom Portainer. 
-
-<br>
-
-### Registry
-Registyer er samlinger av images som kan kjøres som konteinere. Ved å lage en lokal registry vil imageer som er hentet fra en hub på Internett være tilgjengelige lokalt og man er ikke lenger avhengig av Internett for å lage en ny konteiner av samme image. 
-
-Lager en lokal registry som jeg kan tilføre images:
-
-1. Trykker "App Templates" i local inne i Portainer.
-2. Velger "Docker image registry" og gir registryen jeg lager navnet = registry, netverk = bridge, Access control = Administrators, Portmapping; host = 5000 og container = 5000. 
-3. Deployer konteineren. 
-
-4. Går til "Registries" under "Settings" og legger til en custom registry med "Name"=my-registry og "Registry URL"=172.17.0.3:5000 som er ip-en og porten til registry konteineren som ble lagd i avsnittet over.
-
-For å legge til images til den lokale registryen, kan man lage images av konteinere som er lastet ned fra en hub på Internett:
-
-1. I local i Portainer, gå til "Containers" og gå inn i konteineren som skal legges til i den lokale regisrtyen, slik at du kommer til "Container Details". 
-2. I "Create image" velg "Registry"=my-registry og velger et passende navn for "Image". I dette labboppsettet blir navnet til konteineren brukt.
 
 
 
-### jMeter
-jMeter er et benchmarking-program. 
 
-Følger insallasjonsguiden til justb4/jmeter for å laste ned jMeter. Denne installasjonen vil lage et image av en ferdig lagd Dockerfile av jMeter:
-1. Åpner et terminalvindu på verten og kjører kommandoene:
-```shell
-git clone https://github.com/justb4/docker-jmeter.git
-cd docker-jmeter
-```
-2. Kjører Build scriptet som lager imaget:
-```shell
-sudo ./build.sh
-```
-3. Tester om det funker gjennom å kjøre et test script:
-```shell
-sudo ./test.sh
-```
-Finner resultatet ved å åpne en HTML fil i Firefox:
-```shell
-firefox tests/tivial/report/index.html
-```
-
-Ser at jMeter funker. 
-
-IKKE GJORT! Kjører jMeter konteiner ved å kjøre:
-```shell
-sudo docker-compose up -d
-```
-
-#### Lage test-plan
-Sjekk hva parameterene/elementene som du kan endre på i test-planen er ved å skrive kommandoen:
-```shell
-cat /home/jb/docker-jemter/tests/trivial/test-plan.jmx | grep <navnet_til_elementet>
-```
-
-<br>
-
-
-### nginx
-Nginx vil bli brukt som en web-servver. 
-
-Installerer Nginx:
-1. Går til "Conteiners" i lockal på Porteiner og trykker på "Add container". 
-
-2. Får opp "Create container" og velger "Name"=nginx , "Registry"=Docker Hub , "Image"=nginx . Skrur på "Publish all exposed network ports to random host ports" under "Network ports configuration".
-
-3. Kjør konteineren ved å trykke på "Deploy the container".
-
-Nå kjører konteineren og vider konfigurereing er nødvendig for å sette opp serveren. 
-
-
-<br>
-
-
-<br>
 
 # Windows til applikasjon
 Vi kjører Windows Enterprise 10 OS-build 1........ 64-bit med standardinstillinger 
@@ -298,7 +207,7 @@ WindowsServerProcessIsolation: http://10.0.0.5:8080/100MB.bin
 # Installere Docker Desktop på Windows <a id=Docker_installasjon> </a>
 For installasjon av Docker ble [installasjonsguiden _(https://docs.docker.com/desktop/install/windows-install/)_](https://docs.docker.com/desktop/install/windows-install/) til Docker Inc fulgt. 
 
-Skrur på WSL ved å kjøre kommandoen ```wsl --install``` i Powershell.
+Skrur på WSL 2 ved å kjøre kommandoen ```wsl --install``` i Powershell.
 
 Åpner REGEDIT og endrer HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LxssManager\Start til 2 og starter maskinen på nytt. 
 
@@ -309,11 +218,6 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 Vi installerte Docker Desktop ved å laste ned og kjøre "Docker Desktop Installer.exe" fra 
 [installasjonsguiden](https://docs.docker.com/desktop/install/windows-install/)
 . 
-
-
-**Andreas**
-* Installerte Docker Desktop
-* Kjørte ```wsl --update``` for å installere Linux Subsystem for Windows (WSL 2)
 
 <br><br>
 
